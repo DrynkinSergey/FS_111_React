@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-
 import { fetchUserById } from '../services/api';
 
 const UserDetails = () => {
-  const { userId } = useParams();
+  const { userId } = useParams(); // хук від react-router-dom котрий відмалює нам саме юзера за Id через консоль лог можно його побачити
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
