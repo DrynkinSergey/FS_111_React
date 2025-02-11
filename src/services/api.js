@@ -14,7 +14,7 @@ export const fetchUserById = async userId => {
   const { data } = await axios.get(`users/${userId}`); // ось цей хвістик беремо з інфи на сайті https://dummyjson.com
   return data;
 };
-//пост саме цього юзера
+//пости саме цього юзера, котра вибрані за його userId
 export const fetchPostsByUserId = async userId => {
   const { data } = await axios.get(`/posts/user/${userId}`);
   return data.posts;
