@@ -9,9 +9,9 @@ export const fetchUsers = async () => {
   return data.users;
 };
 
-//отримаємо окремо кожний цікавий юзер
+//отримаємо окремо кожний цікавий юзер за Id 
 export const fetchUserById = async userId => {
-  const { data } = await axios.get(`users/${userId}`);
+  const { data } = await axios.get(`users/${userId}`); // ось цей хвістик беремо з інфи на сайті https://dummyjson.com
   return data;
 };
 //пост саме цього юзера
