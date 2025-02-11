@@ -22,7 +22,9 @@ const App = () => {
     <main>
       <Header />
       <Suspense fallback={<h2>loading...</h2>}>
+  // в Routes тільки Route бо буде помика
         <Routes>
+    //path='/' це маршрутизатор сторінки
           <Route path='/' element={<Home />} />
           {/* localhost/about/aim */}
           {/* localhost/about/company */}
