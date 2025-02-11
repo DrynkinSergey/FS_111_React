@@ -1,12 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
 
+// приймає users зі сторінки Users і рендрить її
 const UserList = ({ users }) => {
   const location = useLocation();
   console.log(location);
   return (
     <div>
       <ul>
+    // відмалюємо
         {users.map(item => (
+      // повертає li обов'язково з key
           <li key={item.id}>
             <Link to={`/users/${item.id}`} state={location}>
               {item.firstName} {item.lastName}
