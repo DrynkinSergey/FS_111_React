@@ -1,9 +1,12 @@
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import s from './Header.module.css';
+
+//обов'язково додати, це компанує одразу декілька стилів разом
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
 };
+
 const Header = () => {
   return (
     <header>
