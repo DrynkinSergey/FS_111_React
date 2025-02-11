@@ -11,9 +11,10 @@ const UserList = ({ users }) => {
         {users.map(item => (
       // повертає li обов'язково з key
           <li key={item.id}>
+      // тут лежить посилання на кожного юзера за ${item.id}
             <Link to={`/users/${item.id}`} state={location}>
               {item.firstName} {item.lastName}
-            </Link>
+            </Link> 
           </li>
         ))}
       </ul>
