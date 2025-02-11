@@ -11,16 +11,17 @@ const Users = () => {
   const isOnline = searchParams.get('isOnline');
   console.log(typeof isOnline);
 
+  //  1))не може бути асинхронною, тому стрілочна функція і лише потім через const
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await fetchUsers();
-        setUsers(data);
+        const data = await fetchUsers(); // 2) беремо дані з запиту
+        setUsers(data); // 3) тут наші користувачі
       } catch (error) {
         console.log(error);
       }
     };
-    getData();
+    getData();  // 4) викликаємо функц. і всі наші юзери тепер лежать у масиві const [users] = useState([]);
   }, []);
 
   const handleChangeQuery = value => {
@@ -33,6 +34,7 @@ const Users = () => {
   return (
     <>
       <SearchBar handleChangeQuery={handleChangeQuery} query={query} />
+  // передаємо пропсами дані юзерів далі для відмалювання їх на екрані
       <UserList users={filteredData} />
     </>
   );
