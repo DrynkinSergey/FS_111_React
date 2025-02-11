@@ -37,9 +37,12 @@ const App = () => {
             <Route path='team' element={<Team />} />
               {/* localhost/about/team */}
           </Route>
+  // тут всі наші знайдені юзери за запитом
           <Route path='/users' element={<Users />} />
+  // це нова сторінка про конкретного користувача
 // уважно проипсувати path='/users/:userId'
           <Route path='/users/:userId' element={<UserDetails />}>
+                // спускаємося нижче, щоб побачити подробиці про кожного юзера
             <Route path='info' element={<h2>Info about user</h2>} />
             <Route path='posts' element={<UserPosts />} />
           </Route>
