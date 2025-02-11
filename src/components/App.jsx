@@ -34,11 +34,12 @@ const App = () => {
           </Route>
 
           <Route path='/users' element={<Users />} />
-
+// уважно проипсувати path='/users/:userId'
           <Route path='/users/:userId' element={<UserDetails />}>
             <Route path='info' element={<h2>Info about user</h2>} />
             <Route path='posts' element={<UserPosts />} />
           </Route>
+      //для будь-якого пошуку не існуючих запитів
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Suspense>
