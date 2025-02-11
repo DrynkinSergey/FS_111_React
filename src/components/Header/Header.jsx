@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import s from './Header.module.css';
 
-//обов'язково додати, це компанує одразу декілька стилів разом
+//обов'язково додати, це компанує одразу декілька стилів разом для <NavLink>, робить підсвітку активної сторінки
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
 };
@@ -15,6 +15,7 @@ const Header = () => {
         <NavLink className={({ isActive }) => clsx(s.link, isActive && s.active)} to='/'>
           Home
         </NavLink>
+//сам реакт буде встановлювати елемент АКТИВНИМ
         <NavLink className={buildLinkClass} to='/about'>
           About
         </NavLink>
