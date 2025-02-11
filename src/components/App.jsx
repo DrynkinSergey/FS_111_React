@@ -16,6 +16,7 @@ const Users = lazy(() => import('../pages/Users'));
 const UserDetails = lazy(() => import('../pages/UserDetails'));
 const UserPosts = lazy(() => import('./NestedRoutes/UserPosts'));
 
+//тут лише маршрутизація, вся логіка розкидана по компонентах
 const App = () => {
   return (
     <main>
