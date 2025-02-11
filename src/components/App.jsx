@@ -44,6 +44,7 @@ const App = () => {
           <Route path='/users/:userId' element={<UserDetails />}>
                 // спускаємося нижче, щоб побачити подробиці про кожного юзера
             <Route path='info' element={<h2>Info about user</h2>} />
+            // щоб це працювало  іду на сторінку <UserDetails /> знизу додаю OUTLET
             <Route path='posts' element={<UserPosts />} />
           </Route>
       //для будь-якого пошуку не існуючих запитів
