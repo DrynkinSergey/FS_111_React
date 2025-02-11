@@ -25,16 +25,18 @@ const App = () => {
   // в Routes тільки Route бо буде помика
         <Routes>
     //path='/' це маршрутизатор сторінки
-          <Route path='/' element={<Home />} />
-          {/* localhost/about/aim */}
-          {/* localhost/about/company */}
-          {/* localhost/about/team */}
-          <Route path='/about' element={<About />}>
+          <Route path='/' element={<Home />} />   
+           <Route path='/about' element={<About />}>
+    //уважно!! вкладені маршрути у вкладці Route---Route  робимо як для чілдренів
+// також path='aim' без "/" лише назва, ці маршрути не є сторінки це лише фрагмент на сторінці
+// ці папки створюємо в components, а потім відобразити на сторінці <About />
             <Route path='aim' element={<Aim />} />
+            {/* localhost/about/aim */}
             <Route path='company' element={<Company />} />
+               {/* localhost/about/company */}
             <Route path='team' element={<Team />} />
+              {/* localhost/about/team */}
           </Route>
-
           <Route path='/users' element={<Users />} />
 // уважно проипсувати path='/users/:userId'
           <Route path='/users/:userId' element={<UserDetails />}>
