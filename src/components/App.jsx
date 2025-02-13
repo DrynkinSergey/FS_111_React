@@ -22,6 +22,7 @@ const App = () => {
   return (
     <main>
       <Header />
+  //поки завантажується сайт треба показати клієнту loading. Для краси можна взяти "react-loader-spinner", зробити окремим комнонентом 
       <Suspense fallback={<h2>loading...</h2>}>
   // в Routes тільки Route бо буде помика
         <Routes>
