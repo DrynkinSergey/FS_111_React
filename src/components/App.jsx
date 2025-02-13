@@ -21,6 +21,7 @@ const UserPosts = lazy(() => import('./NestedRoutes/UserPosts'));
 const App = () => {
   return (
     <main>
+  // огортати Header в Suspense не треба!! бо нічого не побачимо на екрані
       <Header />
   //поки завантажується сайт треба показати клієнту loading. Для краси можна взяти "react-loader-spinner", зробити окремим комнонентом 
       <Suspense fallback={<h2>loading...</h2>}>
