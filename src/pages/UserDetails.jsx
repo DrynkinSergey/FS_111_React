@@ -18,6 +18,7 @@ const UserDetails = () => {
 // 4 ) пропускаємо його спочатку малюємо return, тому if
   
   useEffect(() => {
+//можна чере const, і тоді if виносимо окремо, можна чере функцію тоді спочатку пишемо if, а потім async функцію. Дивитись мою ДЗ goit-react-hw-05 там двома видами прописано
     const getData = async () => {
       const data = await fetchUserById(userId); // приймаємо всі дані вибраного юзера
       setUser(data);
