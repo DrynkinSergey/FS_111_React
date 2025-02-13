@@ -14,6 +14,7 @@ const UserList = ({ users }) => {
           <li key={item.id}>
       // тут лежить посилання на кожного юзера за ${item.id}
             // слово state зарезервоване Реактом, і сюди передаю location куди треба повернутися
+      // to= це куди йдемо,  state= це куди потім отрібно повернутися
             <Link to={`/users/${item.id}`} state={location}>
               {item.firstName} {item.lastName}
             </Link> 
