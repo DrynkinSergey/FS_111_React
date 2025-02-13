@@ -8,7 +8,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   // 1-об'єкт містить гет і сет, 2-все що зберігли в 1
   const [searchParams, setSearchParams] = useSearchParams();
-  // створюю searchParams.get
+  // створюю searchParams.get,  витягую те, що мені потрібно
   const query = searchParams.get('query') ?? ''; // це для цього, щоб можна було ділитися реальним посиланням, щоб їнші могли побачити переданий інтерфейс
   const isOnline = searchParams.get('isOnline');
   console.log(typeof isOnline);
