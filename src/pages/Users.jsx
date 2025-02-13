@@ -31,6 +31,7 @@ const Users = () => {
     setSearchParams(searchParams);
   };
 
+// шукаю дані по фільтру для цього створюємо const query = searchParams.get('query') ?? ''; ДИВ.СТР. 10
   const filteredData = users.filter(user => user.firstName.toLowerCase().includes(query.toLowerCase()));
   return (
     <>
