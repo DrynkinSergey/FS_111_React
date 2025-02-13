@@ -28,9 +28,9 @@ const Users = () => {
   }, []);
 
   const handleChangeQuery = value => {
-    searchParams.set('query', value); // передаємо ніш інпут
+    searchParams.set('query', value); // передаємо ніш інпут, set - умова для запису  даних
     searchParams.set('isOnline', true);
-    setSearchParams(searchParams); // щоб запрацювали searchParams.set тобто всі параметри, що створили, щоб потім інша людина їх могла побачити
+    setSearchParams(searchParams); // щоб запрацювали searchParams.set тобто тут знаходяться всі параметри, що створили, щоб потім інша людина їх могла побачити
   };
 
 // шукаю дані по фільтру для цього створюємо const query = searchParams.get('query') ?? ''; ДИВ.СТР. 10
