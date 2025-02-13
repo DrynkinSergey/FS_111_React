@@ -10,7 +10,7 @@ import Company from './NestedRoutes/Company';
 // import UserDetails from '../pages/UserDetails';
 // import UserPosts from './NestedRoutes/UserPosts';
 import { lazy, Suspense } from 'react';
-
+// підвантажуємо кожну сторінку через lazy, щоб не навантажувати сайт одночасним рендером усього коду.
 const Aim = lazy(() => import('./NestedRoutes/Aim'));
 const Users = lazy(() => import('../pages/Users'));
 const UserDetails = lazy(() => import('../pages/UserDetails'));
