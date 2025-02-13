@@ -14,6 +14,7 @@ const Users = () => {
   //  1))не може бути асинхронною, тому стрілочна функція і лише потім через const
   useEffect(() => {
     const getData = async () => {
+  // обов'язково всі запити на сервер через try/catch
       try {
         const data = await fetchUsers(); // 2) беремо дані з запиту
         setUsers(data); // 3) тут наші користувачі
