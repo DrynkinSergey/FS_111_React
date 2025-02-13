@@ -38,6 +38,7 @@ const UserDetails = () => {
   
   return (
     <div>
+    // у хука useRef current зарезервоване ім'я, тому до goBackUrl обов'язково додаємо current
       <Link to={goBackUrl.current}>Go back</Link>
 
       <img src={user.image} />
