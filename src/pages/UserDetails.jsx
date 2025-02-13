@@ -12,7 +12,7 @@ const UserDetails = () => {
   const navigate = useNavigate();
   // 3) створили юзера зі значенням null
   const [user, setUser] = useState(null); // даних поки не має тому null
-
+// отримуємо інфу про те де знаходимося зараз
   const location = useLocation();
   const goBackUrl = useRef(location?.state ?? '/users');
   
