@@ -8,6 +8,7 @@ const UserDetails = () => {
   // 2) витягуємо юзер userId
   
   const { userId } = useParams(); // хук від react-router-dom котрий відмалює нам саме юзера за Id через консоль лог можно його побачити
+  //приймає адресу куди можна перейти
   const navigate = useNavigate();
   // 3) створили юзера зі значенням null
   const [user, setUser] = useState(null); // даних поки не має тому null
