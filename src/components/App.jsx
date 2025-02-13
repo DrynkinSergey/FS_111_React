@@ -11,6 +11,7 @@ import Company from './NestedRoutes/Company';
 // import UserPosts from './NestedRoutes/UserPosts';
 import { lazy, Suspense } from 'react';
 // підвантажуємо кожну сторінку через lazy, щоб не навантажувати сайт одночасним рендером усього коду.
+//тобто в моменті, коли вантажу Users, буде лише ця сторінка і звідси це буде забирати мало!! часу для завантаження сайту
 const Aim = lazy(() => import('./NestedRoutes/Aim'));
 const Users = lazy(() => import('../pages/Users'));
 const UserDetails = lazy(() => import('../pages/UserDetails'));
