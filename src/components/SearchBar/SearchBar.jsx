@@ -3,6 +3,7 @@ import { Field, Form, Formik } from 'formik';
 const SearchBar = ({ handleChangeQuery, query }) => {
   const onSubmit = values => {
     console.log(values);
+//взяли на сторінці Users.jsx
     handleChangeQuery(values.query);
   };
 

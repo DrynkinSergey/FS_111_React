@@ -2,28 +2,43 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { fetchUserById } from '../services/api';
 
+// 1) створюємо компонент
 const UserDetails = () => {
-  const { userId } = useParams();
+  
+  // 2) витягуємо юзер userId
+  
+  const { userId } = useParams(); // хук від react-router-dom котрий відмалює нам саме юзера за Id через консоль лог можно його побачити
+  //приймає адресу куди можна перейти
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-
+  // 3) створили юзера зі значенням null
+  const [user, setUser] = useState(null); // даних поки не має тому null
+// отримую інфу про те, де знаходимося зараз
   const location = useLocation();
+// useRef - хук, що запам'ятовує локацію, навіть якщо будемо багато глибше ходити по юзеру, але потім все одно зможу повернутися на початок!! const goBackUrl потім передати в Link!!
   const goBackUrl = useRef(location?.state ?? '/users');
-
+  
+// 4 ) програма пропускає його спочатку і малює return, тому if
+  
   useEffect(() => {
+//можна чере const, і тоді if виносимо окремо, можна чере функцію тоді спочатку пишемо if, а потім async функцію. Дивитись мою ДЗ goit-react-hw-05 там двома видами прописано
     const getData = async () => {
-      const data = await fetchUserById(userId);
+      const data = await fetchUserById(userId); // приймаємо всі дані вибраного юзера
       setUser(data);
     };
-    getData();
-  }, [userId]);
+    getData(); // виклик
+  }, [userId]); // щоб не ругався, щоб йому було зрозуміло, що відмальовувати
+  
+// 5) якщо не юзер то повертаємо Loading, пока не маємо даних від серверу. Це заглушка, для того пока отримуємо дані
 
   if (!user) {
     return <h2>Loading...</h2>;
   }
-
+  
+// 6) а вже коли отримали дані то if пропуститься і відмалюється цей return ( <div>...
+  
   return (
     <div>
+    // у хука useRef current зарезервоване ім'я, тому до goBackUrl обов'язково додаємо current
       <Link to={goBackUrl.current}>Go back</Link>
 
       <img src={user.image} />
@@ -31,6 +46,8 @@ const UserDetails = () => {
         {user.firstName} {user.lastName}
       </h2>
       <p>Email: {user.email}</p>
+      
+  // робимо навігацію далі по саме цьому юзеру
       <nav>
         <Link to='info'>Info</Link>
         <Link to='posts'>Posts</Link>
