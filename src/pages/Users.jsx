@@ -6,8 +6,10 @@ import { useSearchParams } from 'react-router-dom';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
+  // 1-об'єкт містить гет і сет, 2-все що зберігли в 1
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
+  // створюю searchParams.get
+  const query = searchParams.get('query') ?? ''; // це для цього, щоб можна було ділитися реальним посиланням, щоб їнші могли побачити переданий інтерфейс
   const isOnline = searchParams.get('isOnline');
   console.log(typeof isOnline);
 
@@ -26,9 +28,9 @@ const Users = () => {
   }, []);
 
   const handleChangeQuery = value => {
-    searchParams.set('query', value);
+    searchParams.set('query', value); // передаємо ніш інпут
     searchParams.set('isOnline', true);
-    setSearchParams(searchParams);
+    setSearchParams(searchParams); // щоб запрацювали searchParams.set тобто всі параметри, що створили, щоб потім інша людина їх могла побачити
   };
 
 // шукаю дані по фільтру для цього створюємо const query = searchParams.get('query') ?? ''; ДИВ.СТР. 10
